@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* body{
+    background-color: black;
+} */
+
+nav{
+    background-color: rgb(53, 14, 89);
+    color: white;
+    height: 53px;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    font-family: 'Dancing Script', cursive;
+}
+
+nav ul{
+    list-style-type: none;
+}
+
+.gameContainer{
+    /* background-color: yellow; */
+    display: flex;
+    /* width:13px; ; */
+    justify-content: center;
+    margin-top: 80px;
+    align-items: center;
+}
+
+.container{
+    display: grid;
+    grid-template-rows: repeat(3,10vw);           /*we need 3 rows for 10vw width each */
+    grid-template-columns: repeat(3,10vw);
+    position: relative;
+    /* pointer-events: none;              to completely disable all the mouse clicks */
+}
+
+.victory{
+    position: relative;
+    right: 54px;
+    width: 0px;
+    transition: 1s ease-out;
+}
+
+.resetInstruct{
+    font-family: 'Josefin Sans', sans-serif;
+    margin-top: 46px;
+}
+
+.box{
+    border: 2px solid rgb(90, 11, 90);
+    font-size: 7vw;
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box:hover{
+    background-color: rgb(219, 187, 249);
+    cursor: pointer;
+}
+
+.gameinfo
+{
+    margin-left: 55px;
+    font-family: 'Pacifico', cursive;
+    padding: 0 33px;
+}
+
+.imgbox img{
+    width: 0px;
+    transition: 1s ease-in-out;
+}
+
+.borderRight-0
+{
+    border-right: 0;
+}
+
+.borderLeft-0
+{
+    border-left: 0;
+}
+
+.borderTop-0
+{
+    border-top: 0;
+}
+
+.borderBottom-0
+{
+    border-bottom: 0;
+}
+
+.reset
+{
+    margin-left: 27px;
+    padding: 5px;
+    border-radius: 8px;
+    background-color:  rgb(53, 14, 89);
+    color: pink;
+    font-family: 'Lobster', cursive;
+    cursor: pointer;
+    display: inline;
+}
+
+.ss{
+    margin-top: 8px;
+
+}
+.info{
+    font-size: 20px;
+}
+
+.line{
+    background-color: black;
+    width: 0;               /*means it will take up the 100% width of the container, under which it is present*/
+    height: 2px;
+    /* margin-left: -102px; */
+    position:absolute;
+    background-color: rgb(111, 18, 111);
+    transition: width 1s ease-in-out;
+}
+
+/* .pointer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+.pointer{
+    /* display: inline-flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* flex-direction: column; */
+    
+}
+
+span img{
+    width: 0px;
+    /* height: 25px; */
+    margin-left: 25px;
+    position:absolute;
+    transition: 1s ease-in-out;
+    margin-bottom: 5px;
+
+}
+/*Now Let us write some media queries to work with responsiveness,
+Okay we had an inspection and saw till the width is 800px , content 
+will be finely visible but as we know, it would render cool only till tablet things
+we have to work for mobile users as well!*/
+
+@media screen and (max-width: 865px)
+{
+    .gameContainer{
+        flex-wrap: wrap;
+    }
+
+    .gameinfo{
+        margin-top: 20px;
+    }
+
+    .gameinfo h1{
+        font-size: 1.5rem;
+    }
+
+    .container{
+        display: grid;
+        grid-template-rows: repeat(3,20vw);           /*we need 3 rows for 10vw width each */
+        grid-template-columns: repeat(3,20vw);
+    }
+
+    .imgbox{
+        margin-top: 50px;
+    }
+
+    h1{
+        margin-top: 30px;
+    }
+
+    .victory{
+        margin-top: -153px;
+        margin-left: 57px;
+    }
+
+    .line{
+        /* transform: translate(); */
+    }
+}
